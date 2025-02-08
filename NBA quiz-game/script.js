@@ -97,3 +97,13 @@ function selectAnswer(e) {
     );
     nextButton.style.display = "block";
 }
+
+// function to move to the next question
+function nextQuestion() {
+    currentQuestionIndex++;
+    if (currentQuestionIndex < nbaQuestions.length) {
+        showQuestion();
+    } else {
+        showScore();
+    }
+}
