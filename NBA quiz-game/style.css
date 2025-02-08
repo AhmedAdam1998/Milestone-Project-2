@@ -69,3 +69,11 @@ header {
     font-size: 18px;
 }
  
+@media (max-width: 768px){
+    body{
+        padding:10px;
+    }
+    #quiz-container {
+        width:100%;
+    }
+}
