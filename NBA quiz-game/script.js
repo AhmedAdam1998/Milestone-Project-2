@@ -115,3 +115,7 @@ function showScore() {
     nextButton.innerText = "Play Again";
     nextButton.style.display = "block";
 }
+
+// Event Listeners
+nextButton.addEventListener("click", nextQuestion);
+restartButton.addEventListener("click", startQuiz);
