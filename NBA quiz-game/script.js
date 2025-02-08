@@ -41,5 +41,14 @@ const nbaQuestions = [
 let currentQuestionIndex= 0;
 let score= 0;
 
+//function to start the quiz
+function startQuiz(){
+    currentQuestionIndex = 0;
+    score = 0;
+    scoreDisplay.innerText= score;
+    nextButton.style.display= "none";
+    showQuestion();
+}
 
+//
 
