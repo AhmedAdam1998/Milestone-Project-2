@@ -53,4 +53,19 @@ header {
     color:white;
     transform: scale(1.05);
 }
-    
+
+#next-btn, #restart-btn{
+    background-color: #c8102e;
+    color: white;
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#quiz-info{
+    margin-top: 20px;
+    font-size: 18px;
+}
+ 
