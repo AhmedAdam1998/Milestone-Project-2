@@ -119,3 +119,6 @@ function showScore() {
 // Event Listeners
 nextButton.addEventListener("click", nextQuestion);
 restartButton.addEventListener("click", startQuiz);
+
+// Start the quiz when page Loads
+startQuiz();
