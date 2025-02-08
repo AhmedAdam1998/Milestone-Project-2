@@ -16,7 +16,19 @@ const nbaQuestions = [
             {text: "Lebron James", correct: false},
             {text: "Kobe Bryant", correct: false}
         ]
-    }
+    },
+    {
+        question:"Which team has won the most NBA championships?",
+        answers: [
+            {text: "Los Angeles Lakers", correct: false},
+            {text: "Chicago Bulls", correct: false},
+            {text: "Boston Celtics", correct: true},
+            {text: "Golden State Warriors", correct: false}
+        ]
+    },
+    
 ]
+
+
 
 
