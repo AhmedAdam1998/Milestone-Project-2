@@ -6,3 +6,10 @@
     box-sizing: border-box;
     font-family: 'Press Start 2P', sans-serif;
 }
+
+body {
+    background-color: #1d428a;
+    color:#ffffff;
+    text-align: center;
+    padding: 20px;
+}
