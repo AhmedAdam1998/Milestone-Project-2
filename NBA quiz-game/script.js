@@ -68,4 +68,9 @@ function showQuestion(){
     });  
 }
 // function to reset answer buttons before showing a new question
-
+function resetState() {
+    nextButton.style.display = "none";
+    while (answerButtons.firstChild){
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
