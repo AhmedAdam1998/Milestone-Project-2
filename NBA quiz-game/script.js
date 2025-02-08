@@ -107,3 +107,11 @@ function nextQuestion() {
         showScore();
     }
 }
+
+// Function to display final score
+function showScore() {
+    resetState();
+    questionElement.innerText = `Game Over! Your final score is ${score}`;
+    nextButton.innerText = "Play Again";
+    nextButton.style.display = "block";
+}
