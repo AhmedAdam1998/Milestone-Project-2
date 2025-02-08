@@ -50,5 +50,22 @@ function startQuiz(){
     showQuestion();
 }
 
-//
+// function to display the current question
+function showQuestion(){
+    resetState();
+    let currentQuestion = nbaQuestions[currentQuestionIndex];
+    questionElement.innerText = currentQuestion.question;
+
+    currentQuestion.answers.forEach(answer => {
+        const button = document.createElement("button");
+        button.innerText = answer.text;
+        button.classList.add("btn");
+        if (answer.correct){
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener("click", selectAnswer);
+        answerButtons.appendChild(button);
+    });  
+}
+// function to reset answer buttons before showing a new question
 
