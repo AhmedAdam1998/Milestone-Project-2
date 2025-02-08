@@ -26,9 +26,20 @@ const nbaQuestions = [
             {text: "Golden State Warriors", correct: false}
         ]
     },
-    
-]
+    {
+        question: "Who is the youngest player to score 60 points in a game?"
+        answers: [
+            {text: "Lebron James", correct: false},
+            {text: "Luka Doncic", correct: false},
+            {text: "Devin Booker", correct: true},
+            {text: "Kevin Durant", correct: false},
+        ]
+    }
 
+];
+
+let currentQuestionIndex= 0;
+let score= 0;
 
 
 
