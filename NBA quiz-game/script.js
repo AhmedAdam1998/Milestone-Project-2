@@ -74,3 +74,26 @@ function resetState() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
+
+// function to handle user's answer selection
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct === "true";
+
+    if (correct) {
+        selectedButton.style.backgroundColor = "green";
+        score++;
+        scoreDisplay.innerText 0 score;
+    } else {
+        selectedButton.style.backgroundColor = "red";
+    }
+
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.style.backgroundColor = "green";
+        }
+        button.disabled = true;
+    }
+    );
+    nextButton.style.display = "block";
+}
