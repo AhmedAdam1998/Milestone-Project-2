@@ -129,10 +129,15 @@ function nextQuestion() {
 
 // Function to display final score
 function showScore() {
+    clearInterval(timerInterval);
     resetState();
-    questionElement.innerText = `Game Over! Your final score is ${score}`;
-    nextButton.innerText = "Play Again";
-    nextButton.style.display = "block";
+
+    questionElement.innerText=`Game Over!`;
+    nextButton.innerText= "Play Again!";
+    nextButton.style.display="block";
+
+    nextButton.removeEventListener("click", nextQuestion);
+    nextButton.addEventListener("click",startQuiz);
 }
 
 // Event Listeners
