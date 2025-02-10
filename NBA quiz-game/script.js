@@ -27,14 +27,14 @@ const nbaQuestions = [
         ]
     },
     {
-        question: "Who is the youngest player to score 60 points in a game?"
+        question: "Who is the youngest player to score 60 points in a game?",
         answers: [
             {text: "Lebron James", correct: false},
             {text: "Luka Doncic", correct: false},
             {text: "Devin Booker", correct: true},
-            {text: "Kevin Durant", correct: false},
+            {text: "Kevin Durant", correct: false}
         ]
-    }
+    },
 
 ];
 
@@ -51,21 +51,40 @@ function startQuiz(){
 }
 
 // function to display the current question
-function showQuestion(){
+let timeLeft = 30;
+let timerInterval;
+
+function showQuestion() {
     resetState();
+    clearInterval(timerInterval);
+
+    timeLeft=30;
+    document.getElementById("timer").innerText=timeLeft;
+
     let currentQuestion = nbaQuestions[currentQuestionIndex];
-    questionElement.innerText = currentQuestion.question;
+    questionElement.innerText=currentQuestion.question;
 
     currentQuestion.answers.forEach(answer => {
-        const button = document.createElement("button");
-        button.innerText = answer.text;
+        const button=document.createElement("button");
+        button.innerText=answer.text;
         button.classList.add("btn");
         if (answer.correct){
-            button.dataset.correct = answer.correct;
+            button.dataset.correct=answer.correct;
         }
         button.addEventListener("click", selectAnswer);
         answerButtons.appendChild(button);
-    });  
+    });
+
+    timerInterval=setInterval(()=> {
+        timeLeft--;
+        document.getElementById("timer").innerText=timeLeft;
+
+        if (timeLeft<=0){
+            clearInterval(timerInterval);
+            nextQuestion();
+
+        }
+    },1000);
 }
 // function to reset answer buttons before showing a new question
 function resetState() {
@@ -83,7 +102,7 @@ function selectAnswer(e) {
     if (correct) {
         selectedButton.style.backgroundColor = "green";
         score++;
-        scoreDisplay.innerText 0 score;
+        scoreDisplay.innerText = score;
     } else {
         selectedButton.style.backgroundColor = "red";
     }
