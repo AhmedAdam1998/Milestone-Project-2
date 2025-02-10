@@ -40,23 +40,28 @@ const nbaQuestions = [
 
 let currentQuestionIndex= 0;
 let score= 0;
+let timeLeft = 30;
+let timerInterval;
 
 //function to start the quiz
 function startQuiz(){
-    currentQuestionIndex =0;
+clearInterval(timerInterval)
+currentQuestionIndex =0;
 score=0;
 timeLeft=30;
 scoreDisplay.innerText=score;
 
 nextButton.innerText="Next Question";
 nextButton.style.display="none";
-nextButton.removeEventListener("click", startQuiz);
-nextButton.addEventListener("click", nextQuestion);
+restartButton.style.display = "block";
+
+nextButton.onclick= nextQuestion;
+
+resetState();
+showQuestion();
 }
 
 // function to display the current question
-let timeLeft = 30;
-let timerInterval;
 
 function showQuestion() {
     resetState();
@@ -103,6 +108,8 @@ function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct === "true";
 
+    clearInterval(timerInterval);
+
     if (correct) {
         selectedButton.style.backgroundColor = "green";
         score++;
@@ -123,7 +130,9 @@ function selectAnswer(e) {
 
 // function to move to the next question
 function nextQuestion() {
+    clearInterval(timerInterval);
     currentQuestionIndex++;
+
     if (currentQuestionIndex < nbaQuestions.length) {
         showQuestion();
     } else {
@@ -139,18 +148,15 @@ function showScore() {
     questionElement.innerText=`Game Over!`;
     nextButton.innerText= "Play Again!";
     nextButton.style.display="block";
+    restartButton.style.display="block"
 
-    nextButton.removeEventListener("click", nextQuestion);
-    nextButton.addEventListener("click",startQuiz);
+    nextButton.onclick=startQuiz;
 }
 
 // Event Listeners
-nextButton.addEventListener("click", nextQuestion);
 restartButton.addEventListener("click", startQuiz);
 
 // Start the quiz when page Loads
 startQuiz();
 
 
-resetState();
-showQuestion();
