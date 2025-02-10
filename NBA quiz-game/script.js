@@ -43,11 +43,15 @@ let score= 0;
 
 //function to start the quiz
 function startQuiz(){
-    currentQuestionIndex = 0;
-    score = 0;
-    scoreDisplay.innerText= score;
-    nextButton.style.display= "none";
-    showQuestion();
+    currentQuestionIndex =0;
+score=0;
+timeLeft=30;
+scoreDisplay.innerText=score;
+
+nextButton.innerText="Next Question";
+nextButton.style.display="none";
+nextButton.removeEventListener("click", startQuiz);
+nextButton.addEventListener("click", nextQuestion);
 }
 
 // function to display the current question
@@ -146,3 +150,7 @@ restartButton.addEventListener("click", startQuiz);
 
 // Start the quiz when page Loads
 startQuiz();
+
+
+resetState();
+showQuestion();
