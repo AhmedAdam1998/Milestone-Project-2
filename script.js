@@ -40,6 +40,69 @@ const nbaQuestions = [
             {text: "Kevin Durant", correct: false}
         ]
     },
+    {
+        question:"Which player is known as 'The King'?",
+        answers: [
+            {text: "Michael Jordan", correct: false},
+            {text: "Lebron James", correct: true},
+            {text: "Kobe Bryant", correct: false},
+            {text: "Shaquille O'Neal", correct:false }
+        ]
+    },
+    {
+        question: "Which team is based in Chicago?",
+        answers: [
+            { text: "Chicago Bulls", correct: true },
+            { text: "Detroit Pistons", correct: false },
+            { text: "New York Knicks", correct: false },
+            { text: "Boston Celtics", correct: false }
+        ]
+    },
+    {
+        question: "Who was known as 'His Airness'?",
+        answers: [
+            { text: "Kobe Bryant", correct: false },
+            { text: "Michael Jordan", correct: true },
+            { text: "LeBron James", correct: false },
+            { text: "Kevin Durant", correct: false }
+        ]
+    },
+    {
+        question: "Which player is famous for his skyhook?",
+        answers: [
+            { text: "Magic Johnson", correct: false },
+            { text: "Kareem Abdul-Jabbar", correct: true },
+            { text: "Larry Bird", correct: false },
+            { text: "Bill Russell", correct: false }
+        ]
+    },
+    {
+        question: "Which team drafted Kobe Bryant?",
+        answers: [
+            { text: "Los Angeles Lakers", correct: false },
+            { text: "Charlotte Hornets", correct: true },
+            { text: "Boston Celtics", correct: false },
+            { text: "New York Knicks", correct: false }
+        ]
+    },
+    {
+        question: "Who is the NBA's all-time leading scorer?",
+        answers: [
+            { text: "Kareem Abdul-Jabbar", correct: true },
+            { text: "Michael Jordan", correct: false },
+            { text: "LeBron James", correct: false },
+            { text: "Karl Malone", correct: false }
+        ]
+    },
+    {
+        question: "Who is the NBA's all-time leader in assists?",
+        answers: [
+            { text: "John Stockton", correct: true },
+            { text: "Magic Johnson", correct: false },
+            { text: "Steve Nash", correct: false },
+            { text: "Jason Kidd", correct: false }
+        ]
+    }
 
 ];
 
