@@ -152,7 +152,19 @@ function showScore() {
     nextButton.style.display="block";
     restartButton.style.display="block"
 
-    nextButton.onclick=startQuiz;
+    nextButton.onclick=function(){
+        showLandingPage();
+    };
+}
+
+function showLandingPage(){
+
+    questionElement.style.display="none";
+    answerButtons.style.display="none";
+    nextButton.style.display ="none";
+    document.getElementById("quiz-info").style.display="none"
+
+    LandingOverlay.style.display="flex";
 }
 
 // Event Listeners
@@ -160,8 +172,12 @@ restartButton.addEventListener("click", startQuiz);
 
 playNowBtn.addEventListener("click", ()=>{
     LandingOverlay.style.display="none";
+    questionElement.style.display="block";
+    answerButtons.style.display="flex";
+    document.getElementById("quiz-info").style.display = "block";
+
     startQuiz();
-})
+});
 
 
 
