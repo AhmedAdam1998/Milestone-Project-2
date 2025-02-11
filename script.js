@@ -5,6 +5,8 @@ const answerButtons= document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
 const restartButton= document.getElementById("restart-btn");
 const scoreDisplay= document.getElementById("score");
+const LandingOverlay= document.getElementById("landing-overlay");
+const playNowBtn = document.getElementById("play-now-btn");
 
 // Quiz Data (NBA Questions)
 const nbaQuestions = [
@@ -156,7 +158,10 @@ function showScore() {
 // Event Listeners
 restartButton.addEventListener("click", startQuiz);
 
-// Start the quiz when page Loads
-startQuiz();
+playNowBtn.addEventListener("click", ()=>{
+    LandingOverlay.style.display="none";
+    startQuiz();
+})
+
 
 
