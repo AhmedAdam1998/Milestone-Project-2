@@ -50,7 +50,7 @@ header {
 }
 
 .btn:hover {
-    background-color:#c8102e;
+    background-color:orange;
     color:white;
     transform: scale(1.05);
 }
