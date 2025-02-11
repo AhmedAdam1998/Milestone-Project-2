@@ -189,12 +189,8 @@ function selectAnswer(e) {
     }
 
     Array.from(answerButtons.children).forEach(button => {
-        if (button.dataset.correct === "true") {
-            button.style.backgroundColor = "green";
-        }
         button.disabled = true;
-    }
-    );
+    });
     nextButton.style.display = "block";
 }
 

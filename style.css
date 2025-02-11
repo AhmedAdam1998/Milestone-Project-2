@@ -106,6 +106,13 @@ header {
     border-radius: 5px;
 }
 
+.btn:disabled:hover{
+    transform:none;
+    background-color:#f5f5f5 ;
+    color:#1d428a;
+    cursor: default;
+}
+
 @media (max-width: 768px){
     body{
         padding:10px;
