@@ -106,6 +106,8 @@ const nbaQuestions = [
 
 ];
 
+document.getElementById("total-questions").innerText=nbaQuestions.length;
+
 let currentQuestionIndex= 0;
 let score= 0;
 let timeLeft = 30;
