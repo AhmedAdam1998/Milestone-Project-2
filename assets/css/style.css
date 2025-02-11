@@ -21,6 +21,18 @@ header {
     font-weight: bold;
 }
 
+#footer {
+    background-color: #c8102e;
+    color: #ffffff;
+    text-align:center;
+    padding:15px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    z-index: 100;
+}
+
 #quiz-container {
     background-color: rgba(255,255,255,0.1);
     padding: 20px;
