@@ -211,7 +211,7 @@ function showScore() {
     clearInterval(timerInterval);
     resetState();
 
-    questionElement.innerText=`Game Over!`;
+    questionElement.innerHTML = `Game Over!<br>Your Final score was: ${score}`;
     nextButton.innerText= "Play Again!";
     nextButton.style.display="block";
     restartButton.style.display="block"
