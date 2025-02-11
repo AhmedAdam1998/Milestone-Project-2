@@ -7,6 +7,9 @@ const restartButton= document.getElementById("restart-btn");
 const scoreDisplay= document.getElementById("score");
 const LandingOverlay= document.getElementById("landing-overlay");
 const playNowBtn = document.getElementById("play-now-btn");
+const quitModal = document.getElementById("quit-modal");
+const confirmQuit = document.getElementById("confirm-quit");
+const cancelQuit= document.getElementById("cancel-quit");
 
 // Quiz Data (NBA Questions)
 const nbaQuestions = [
@@ -167,8 +170,33 @@ function showLandingPage(){
     LandingOverlay.style.display="flex";
 }
 
+function resumeTimer(){
+    timerInterval=setInterval(()=>{
+        timeLeft--;
+        document.getElementById("timer").innerText=timeLeft;
+        if(timeLeft<=0){
+            clearInterval(timerInterval);
+            nextQuestion();
+        }
+    },1000);
+}
+
 // Event Listeners
-restartButton.addEventListener("click", startQuiz);
+restartButton.addEventListener("click", (e)=>{
+    e.preventDefault();
+    clearInterval(timerInterval);
+    quitModal.showModal();
+});
+
+cancelQuit.addEventListener("click",()=>{
+    quitModal.close();
+    resumeTimer();
+});
+
+confirmQuit.addEventListener("click",()=>{
+    quitModal.close();
+    showLandingPage();
+});
 
 playNowBtn.addEventListener("click", ()=>{
     LandingOverlay.style.display="none";
