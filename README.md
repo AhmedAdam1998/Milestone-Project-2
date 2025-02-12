@@ -143,6 +143,11 @@ Refer to commit logs for details on resolved issues.
 -Use Terminal for pushing and commiting.
 -Always use present tense for writing commits, make sure it is adhering to Industry Standards.
 
+### Deployment
+Deployment
+This site was deployed via GitHub pages using the following steps: From the GitHub repository, navigate to Settings In the left-hand navigation section select Pages From the source section drop-down menu change Branch from none to main and click the Save After several minutes the website is live and will be automatically refreshed with each Git push command. The link to the live site is: https://ahmedadam1998.github.io/Milestone-Project-2/
+
+To run locally: Log into GitHub and click on repository to download (https://github.com/AhmedAdam1998/Milestone-Project-2) Select Code and click "Download the Zip file. Once download is completed, extract ZIP file and use in your local environment. Alternatively you can Clone or Fork this repository into your GitHub account.
 
 ### Code
 
