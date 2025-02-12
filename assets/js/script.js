@@ -186,7 +186,7 @@ function showQuestion() {
 /**
  * Resets the state by removing all answer buttons and hiding the Next button.
  */
-function resetState() { sh
+function resetState() {
     nextButton.style.display = "none";
     while (answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
