@@ -1,5 +1,11 @@
-// NBA Quiz Game Javascript
-// Select elements from the HTML
+/**
+ * NBA Quiz Game Javascript
+ * 
+ * This script controls the functionality of the NBA Quiz Game.
+ */
+/**
+ * Select DOM elements.
+ */
 const questionElement= document.getElementById("question");
 const answerButtons= document.getElementById("answer-buttons");
 const nextButton= document.getElementById("next-btn");
@@ -11,7 +17,9 @@ const quitModal = document.getElementById("quit-modal");
 const confirmQuit = document.getElementById("confirm-quit");
 const cancelQuit= document.getElementById("cancel-quit");
 
-// Quiz Data (NBA Questions)
+/**
+ * Quiz Data (NBA Questions)
+ */
 const nbaQuestions = [
     {
         question: "Who holds the record for most points in a single NBA game?",
@@ -106,6 +114,10 @@ const nbaQuestions = [
 
 ];
 
+/**
+ * Update the total question count in the landing overlay.
+ */
+
 document.getElementById("total-questions").innerText=nbaQuestions.length;
 
 let currentQuestionIndex= 0;
@@ -113,7 +125,9 @@ let score= 0;
 let timeLeft = 30;
 let timerInterval;
 
-//function to start the quiz
+/**
+ * Starts the quiz by resetting variables and displaying the first question.
+ */
 function startQuiz(){
 clearInterval(timerInterval)
 currentQuestionIndex =0;
@@ -131,7 +145,9 @@ resetState();
 showQuestion();
 }
 
-// function to display the current question
+/**
+ * Displays the current question along with its answer choices.
+ */
 
 function showQuestion() {
     resetState();
@@ -167,15 +183,19 @@ function showQuestion() {
         }
     },1000);
 }
-// function to reset answer buttons before showing a new question
-function resetState() {
+/**
+ * Resets the state by removing all answer buttons and hiding the Next button.
+ */
+function resetState() { sh
     nextButton.style.display = "none";
     while (answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 
-// function to handle user's answer selection
+/**
+ * Handles the user's answer selection, updates the score, and disables all buttons.
+ */
 function selectAnswer(e) {
     const selectedButton = e.target;
     const correct = selectedButton.dataset.correct === "true";
@@ -196,7 +216,9 @@ function selectAnswer(e) {
     nextButton.style.display = "block";
 }
 
-// function to move to the next question
+/**
+ * Moves to the next question or shows the final score if there are no more questions.
+ */
 function nextQuestion() {
     clearInterval(timerInterval);
     currentQuestionIndex++;
@@ -208,7 +230,9 @@ function nextQuestion() {
     }
 }
 
-// Function to display final score
+/**
+ * Displays the final score and shows the "Play Again" button.
+ */
 function showScore() {
     clearInterval(timerInterval);
     resetState();
@@ -223,6 +247,9 @@ function showScore() {
     };
 }
 
+/**
+ * Displays the landing overlay and hides the quiz content.
+ */
 function showLandingPage(){
 
     questionElement.style.display="none";
@@ -233,6 +260,9 @@ function showLandingPage(){
     LandingOverlay.style.display="flex";
 }
 
+/**
+ * Resumes the game timer from the current timeLeft value.
+ */
 function resumeTimer(){
     timerInterval=setInterval(()=>{
         timeLeft--;
@@ -244,7 +274,9 @@ function resumeTimer(){
     },1000);
 }
 
-// Event Listeners
+/**
+ * Event Listeners for restart, quit modal, and play now button.
+ */
 restartButton.addEventListener("click", (e)=>{
     e.preventDefault();
     clearInterval(timerInterval);
