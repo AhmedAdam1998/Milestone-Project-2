@@ -140,6 +140,8 @@ function showQuestion() {
     timeLeft=30;
     document.getElementById("timer").innerText=timeLeft;
 
+    document.getElementById("question-counter").innerText= `Question ${currentQuestionIndex + 1} of ${nbaQuestions.length}`;
+
     let currentQuestion = nbaQuestions[currentQuestionIndex];
     questionElement.innerText=currentQuestion.question;
 
