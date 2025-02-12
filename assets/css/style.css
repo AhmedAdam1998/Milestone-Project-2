@@ -12,6 +12,7 @@ body {
     color:#ffffff;
     text-align: center;
     padding: 20px;
+    padding-bottom: 70px;
 }
 
 header {
@@ -28,9 +29,11 @@ header {
     padding:15px 20px;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     font-size: 14px;
-    z-index: 100;
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
 #quiz-container {
